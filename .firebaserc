@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "netflix-gpt-fec36",
+    "prod": "netflix-gpt-fec36"
+  },
+  "targets": {},
+  "etags": {}
+}
