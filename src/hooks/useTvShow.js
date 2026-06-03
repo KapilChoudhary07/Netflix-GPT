@@ -22,7 +22,8 @@ const useTvShow = () => {
   };
   useEffect(() => {
     !tvshowMovies && getTvShow();
-  }, [tvshowMovies]);
+  // }, [tvshowMovies]);
+  }, [tvshowMovies, getTvShow]);
 }
 
 

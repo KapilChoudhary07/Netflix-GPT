@@ -24,7 +24,8 @@ const useOnTheAirMovies = () => {
 
   useEffect(() => {
    !on_the_air && getOnTheAirMovies();
-  }, [on_the_air]);
+  // }, [on_the_air]);
+  }, [on_the_air, getOnTheAirMovies]);
 }
 
 
