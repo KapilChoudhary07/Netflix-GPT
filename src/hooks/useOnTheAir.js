@@ -21,7 +21,7 @@ const useOnTheAirMovies = () => {
     // console.log(json.results);---------
     dispatch(addontheairMovies(json.results));
   };
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
    !on_the_air && getOnTheAirMovies();
   }, []);

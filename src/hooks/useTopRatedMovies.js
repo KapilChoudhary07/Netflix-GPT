@@ -21,7 +21,7 @@ const useTopRatedMovies = () => {
     // console.log(json.results);---------
     dispatch(addtopratedMovies(json.results));
   };
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
    !top_ratedMovies && getTopRatedMovies();
   }, []);

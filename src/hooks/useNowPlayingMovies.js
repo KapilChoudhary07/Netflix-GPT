@@ -20,7 +20,7 @@ const useNowPlayingMovies = () => {
     // console.log(json.results);---------
     dispatch(addNowPlayingMovies(json.results));
   };
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
         
     !nowPlayingMovies && getNowPlayingMovies();
