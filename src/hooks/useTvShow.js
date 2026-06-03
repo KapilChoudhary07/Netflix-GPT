@@ -20,10 +20,9 @@ const useTvShow = () => {
     // console.log(json.results);---------
     dispatch(addtvshow(json.results));
   };
-// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     !tvshowMovies && getTvShow();
-  }, []);
+  }, [tvshowMovies]);
 }
 
 

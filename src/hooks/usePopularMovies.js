@@ -20,10 +20,9 @@ const usePopularMovies = () => {
     // console.log(json.results);---------
     dispatch(addpopularMovies(json.results));
   };
-// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
    !popularMovies && getPopularMovies();
-  }, []);
+  }, [popularMovies]);
 }
 
 
