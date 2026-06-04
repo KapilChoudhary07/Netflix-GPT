@@ -8,7 +8,7 @@ import MovieList from "./MovieList";
 const SecondaryContainer = () => {
   const movies = useSelector((store) => store.movies);
 
-  if (!movies.nowPlayingMovies) return null;
+  if (!movies.nowPlayingMovies || movies.nowPlayingMovies.length === 0) return null;
 
   return (
     <div className="relative z-20 bg-black -mt-32 md:-mt-56 pb-10">

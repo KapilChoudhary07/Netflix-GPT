@@ -21,7 +21,7 @@ const useTvShow = () => {
 
       const json = await data.json();
 
-      dispatch(addtvshow(json.results));
+      dispatch(addtvshow(json?.results || []));
     };
 
     !tvshowMovies && getTvShow();

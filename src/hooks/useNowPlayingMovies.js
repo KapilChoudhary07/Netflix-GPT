@@ -21,7 +21,7 @@ const useNowPlayingMovies = () => {
 
       const json = await data.json();
 
-      dispatch(addNowPlayingMovies(json.results));
+      dispatch(addNowPlayingMovies(json?.results || []));
     };
 
     !nowPlayingMovies && getNowPlayingMovies();

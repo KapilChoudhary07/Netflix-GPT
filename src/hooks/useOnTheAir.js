@@ -21,7 +21,7 @@ const useOnTheAirMovies = () => {
 
       const json = await data.json();
 
-      dispatch(addontheairMovies(json.results));
+      dispatch(addontheairMovies(json?.results || []));
     };
 
     !on_the_air && getOnTheAirMovies();

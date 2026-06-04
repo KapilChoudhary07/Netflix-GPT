@@ -21,7 +21,7 @@ const useTopRatedMovies = () => {
 
       const json = await data.json();
 
-      dispatch(addtopratedMovies(json.results));
+      dispatch(addtopratedMovies(json?.results || []));
     };
 
     !top_ratedMovies && getTopRatedMovies();

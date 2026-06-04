@@ -20,7 +20,7 @@ const usePopularMovies = () => {
 
       const json = await data.json();
 
-      dispatch(addpopularMovies(json.results));
+      dispatch(addpopularMovies(json?.results || []));
     };
 
     !popularMovies && getPopularMovies();
