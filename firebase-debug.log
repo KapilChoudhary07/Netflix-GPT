@@ -1,0 +1,70 @@
+[debug] [2026-07-01T16:44:43.059Z] ----------------------------------------------------------------------
+[debug] [2026-07-01T16:44:43.063Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kapil\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-07-01T16:44:43.064Z] CLI Version:   15.19.0
+[debug] [2026-07-01T16:44:43.064Z] Platform:      win32
+[debug] [2026-07-01T16:44:43.064Z] Node Version:  v22.20.0
+[debug] [2026-07-01T16:44:43.065Z] Time:          Wed Jul 01 2026 22:14:43 GMT+0530 (India Standard Time)
+[debug] [2026-07-01T16:44:43.065Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-07-01T16:44:43.071Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-07-01T16:44:56.449Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-07-01T16:44:56.450Z] > authorizing via signed-in user (kapilchoudhary9171@gmail.com)
+[debug] [2026-07-01T16:44:56.450Z] [iam] checking project netflixgpt-4886e for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-07-01T16:44:56.452Z] Checked if tokens are valid: false, expires at: 1780502710729
+[debug] [2026-07-01T16:44:56.453Z] Checked if tokens are valid: false, expires at: 1780502710729
+[debug] [2026-07-01T16:44:56.453Z] > refreshing access token with scopes: []
+[debug] [2026-07-01T16:44:56.455Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-07-01T16:44:56.455Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-07-01T16:44:56.749Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-07-01T16:44:56.749Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-07-01T16:44:56.774Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions [none]
+[debug] [2026-07-01T16:44:56.774Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions  x-goog-user-project=netflixgpt-4886e
+[debug] [2026-07-01T16:44:56.775Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-07-01T16:44:57.176Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-07-01T16:44:57.176Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-07-01T16:44:58.405Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions 400
+[debug] [2026-07-01T16:44:58.405Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions {"error":{"code":400,"message":"Project 'projects/netflixgpt-4886e' not found or deleted.","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"USER_PROJECT_DENIED","domain":"googleapis.com","metadata":{"containerInfo":"projects/netflixgpt-4886e","consumer":"projects/netflixgpt-4886e","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2026-07-01T16:44:58.407Z] [iam] error while checking permissions, command may fail: Request to https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions had HTTP Error: 400, Project 'projects/netflixgpt-4886e' not found or deleted.
+[debug] [2026-07-01T16:44:58.407Z] Checked if tokens are valid: true, expires at: 1782927895749
+[debug] [2026-07-01T16:44:58.408Z] Checked if tokens are valid: true, expires at: 1782927895749
+[debug] [2026-07-01T16:44:58.408Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e [none]
+[debug] [2026-07-01T16:44:59.228Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e 403
+[debug] [2026-07-01T16:44:59.228Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-07-01T16:44:59.229Z] Request to https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e had HTTP Error: 403, The caller does not have permission
+[debug] [2026-07-01T16:44:59.646Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\kapil\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:53:12)
+    at RetryOperation._fn (C:\Users\kapil\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:333:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to get Firebase project netflixgpt-4886e. Please make sure the project exists and your account has permission to access it.
+[debug] [2026-07-01T16:45:17.521Z] ----------------------------------------------------------------------
+[debug] [2026-07-01T16:45:17.526Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kapil\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-07-01T16:45:17.526Z] CLI Version:   15.19.0
+[debug] [2026-07-01T16:45:17.526Z] Platform:      win32
+[debug] [2026-07-01T16:45:17.527Z] Node Version:  v22.20.0
+[debug] [2026-07-01T16:45:17.527Z] Time:          Wed Jul 01 2026 22:15:17 GMT+0530 (India Standard Time)
+[debug] [2026-07-01T16:45:17.527Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-07-01T16:45:23.968Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-07-01T16:45:23.969Z] > authorizing via signed-in user (kapilchoudhary9171@gmail.com)
+[debug] [2026-07-01T16:45:23.969Z] [iam] checking project netflixgpt-4886e for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-07-01T16:45:23.971Z] Checked if tokens are valid: true, expires at: 1782927895749
+[debug] [2026-07-01T16:45:23.972Z] Checked if tokens are valid: true, expires at: 1782927895749
+[debug] [2026-07-01T16:45:23.973Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions [none]
+[debug] [2026-07-01T16:45:23.974Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions  x-goog-user-project=netflixgpt-4886e
+[debug] [2026-07-01T16:45:23.974Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-07-01T16:45:25.655Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions 400
+[debug] [2026-07-01T16:45:25.655Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions {"error":{"code":400,"message":"Project 'projects/netflixgpt-4886e' not found or deleted.","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"USER_PROJECT_DENIED","domain":"googleapis.com","metadata":{"service":"cloudresourcemanager.googleapis.com","containerInfo":"projects/netflixgpt-4886e","consumer":"projects/netflixgpt-4886e"}}]}}
+[debug] [2026-07-01T16:45:25.656Z] [iam] error while checking permissions, command may fail: Request to https://cloudresourcemanager.googleapis.com/v1/projects/netflixgpt-4886e:testIamPermissions had HTTP Error: 400, Project 'projects/netflixgpt-4886e' not found or deleted.
+[debug] [2026-07-01T16:45:25.657Z] Checked if tokens are valid: true, expires at: 1782927895749
+[debug] [2026-07-01T16:45:25.657Z] Checked if tokens are valid: true, expires at: 1782927895749
+[debug] [2026-07-01T16:45:25.658Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e [none]
+[debug] [2026-07-01T16:45:26.463Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e 403
+[debug] [2026-07-01T16:45:26.463Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-07-01T16:45:26.464Z] Request to https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e had HTTP Error: 403, The caller does not have permission
+[debug] [2026-07-01T16:45:26.693Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/netflixgpt-4886e had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\kapil\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:53:12)
+    at RetryOperation._fn (C:\Users\kapil\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:333:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to get Firebase project netflixgpt-4886e. Please make sure the project exists and your account has permission to access it.

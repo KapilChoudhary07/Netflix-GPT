@@ -19,18 +19,16 @@ const Browse = () => {
   useTvShow();
 
   return (
-    <div>
+    <div className="min-h-screen bg-[#080808] text-white">
       <Header />
       {showGptSearch ? (
         <GptSearch />
       ) : (
         <>
-          {" "}
           <MainContainer />
-          <SecondaryContainer />{" "}
+          <SecondaryContainer />
         </>
       )}
-     
     </div>
   );
 };

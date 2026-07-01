@@ -1,5 +1,3 @@
-
-
 import { useRef } from "react";
 import lang from "../utils/languageConstants";
 import { useDispatch, useSelector } from "react-redux";

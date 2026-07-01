@@ -1,233 +1,39 @@
-
-// import React from "react";
-// import { IMG_CDN_URL } from "../utils/constants";
-
-
-// const MovieCard = ({ posterPath }) => {
-//   return (
-//     <div
-//       className="w-[400px] p-1 relative 
-   
-//     md:w-40 cursor-pointer
-//   transition-all duration-400 ease-out
-//   hover:-translate-y-8 
-  
-//   "
-//     >
-//       <img
-//         className="rounded-md
-//         h-56 object-cover 
-//                transition-all duration-300 group-hover:shadow-xl
-               
-//                "
-//         alt="Movie Card"
-//         src={IMG_CDN_URL + posterPath}
-//       />
-//     </div>
-//   );
-// };
-
-// export default MovieCard;
-
-
-
-
-// import React from "react";
-// import { IMG_CDN_URL } from "../utils/constants";
-
-// const MovieCardHoverIcons = ({ posterPath }) => {
-
-//   if(!posterPath) return null;
-//   return (
-//     <div
-//       className="relative group 
-//       w-[150px] md:w-[170px] 
-//       cursor-pointer overflow-hidden 
-//       rounded-sm
-//       flex-shrink-0"
-//     >
-//       {/* Poster */}
-//       <img
-//         src={IMG_CDN_URL + posterPath}
-//         alt="Movie Poster"
-//         className="w-full h-[250px] object-cover rounded-md
-//         transition-all duration-300 group-hover:scale-150"
-//       />
-
-//       {/* Dark Overlay */}
-//       <div
-//         className="absolute 
-//          group-hover:opacity-100 
-//         transition-opacity duration-300"
-//       />
-
-//       {/* Center Play Button */}
-//       <div
-//         className="absolute inset-0 flex items-center justify-center
-//         opacity-0 group-hover:opacity-100 
-//         transition duration-300"
-//       >
-//         <button
-//           className="bg-white text-black px-4 py-2 rounded-md 
-//           font-semibold text-sm flex items-center gap-2 
-//           hover:scale-105 transition"
-//         >
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             className="h-4 w-4"
-//             viewBox="0 0 24 24"
-//             fill="currentColor"
-//           >
-//             <path d="M4 2v20l17-10L4 2z" />
-//           </svg>
-//           Play
-//         </button>
-//       </div>
-
-//       {/* Bottom Icons */}       <div
-//         className="absolute bottom-2 left-1 flex gap-2
-//         opacity-0 group-hover:opacity-105
-//         transition duration-300"
-//       >
-//         {/* Add Icon */}
-//         <button
-//           className="p-2 bg-white/20 backdrop-blur-sm rounded-full
-//           hover:bg-white/30 transition"
-//         >
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             className="h-5 w-5 text-white"
-//             fill="none"
-//             viewBox="0 0 24 24"
-//             stroke="currentColor"
-//             strokeWidth="1.5"
-//           >
-//             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-//           </svg>
-//         </button>
-
-//         {/* Like Icon */}
-//         <button
-//           className="p-2 bg-white/20 backdrop-blur-sm rounded-full
-//           hover:bg-white/30 transition"
-//         >
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             className="h-5 w-5 text-white"
-//             fill="none"
-//             viewBox="0 0 24 24"
-//             stroke="currentColor"
-//             strokeWidth="1.5"
-//           >
-//             <path
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//               d="M14 9V5a3 3 0 10-6 0v4M7 15v-6h10l1 6-1 6H7v-6z"
-//             />
-//           </svg>
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default MovieCardHoverIcons;
-
-
 import React from "react";
 import { IMG_CDN_URL } from "../utils/constants";
 
-const MovieCardHoverIcons = ({ posterPath }) => {
+const MovieCardHoverIcons = ({ posterPath, title }) => {
   if (!posterPath) return null;
 
   return (
-    <div
-      className="relative group 
-      w-25 md:w-[170px] 
-      cursor-pointer overflow-hidden 
-      rounded-sm
-      flex-shrink-0"
-    >
-      {/* Poster */}
+    <div className="group relative aspect-[2/3] w-[128px] flex-shrink-0 cursor-pointer overflow-hidden rounded-md bg-zinc-900 shadow-lg shadow-black/30 transition duration-300 hover:z-20 hover:-translate-y-1 hover:scale-105 hover:shadow-2xl sm:w-[150px] md:w-[178px]">
       <img
         src={IMG_CDN_URL + posterPath}
-        alt="Movie Poster"
-        className="w-full h-[250px] object-cover rounded-md
-        transition-transform duration-300 transform group-hover:scale-105"
+        alt={title || "Movie poster"}
+        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
       />
 
-      {/* Dark Overlay */}
-      <div
-        className="absolute inset-0 bg-black/40
-         opacity-0 group-hover:opacity-100 
-        transition-opacity duration-300"
-      ></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-      {/* Center Play Button */}
-      <div
-        className="absolute inset-0 flex items-center justify-center
-        opacity-0 group-hover:opacity-100 
-        transition-opacity duration-300"
-      >
+      <div className="absolute inset-x-3 bottom-3 translate-y-4 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        {title && (
+          <p className="mb-3 line-clamp-2 text-sm font-semibold leading-tight text-white">
+            {title}
+          </p>
+        )}
         <button
-          className="bg-white text-black px-4 py-2 rounded-md 
-          font-semibold text-sm flex items-center gap-2 
-          hover:scale-105 transition-transform"
+          className="inline-flex h-9 items-center gap-2 rounded bg-white px-3 text-sm font-bold text-black transition hover:bg-white/80"
+          aria-label={`Play ${title || "movie"}`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
+            className="h-3.5 w-3.5"
             viewBox="0 0 24 24"
             fill="currentColor"
+            aria-hidden="true"
           >
             <path d="M4 2v20l17-10L4 2z" />
           </svg>
           Play
-        </button>
-      </div>
-
-      {/* Bottom Icons */}
-      <div
-        className="absolute bottom-2 left-1 flex gap-2
-        opacity-0 group-hover:opacity-100
-        transition-opacity duration-300"
-      >
-        {/* Add Icon */}
-        <button
-          className="p-2 bg-white/20 backdrop-blur-sm rounded-full
-          hover:bg-white/30 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-          </svg>
-        </button>
-
-        {/* Like Icon */}
-        <button
-          className="p-2 bg-white/20 backdrop-blur-sm rounded-full
-          hover:bg-white/30 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M14 9V5a3 3 0 10-6 0v4M7 15v-6h10l1 6-1 6H7v-6z"
-            />
-          </svg>
         </button>
       </div>
     </div>
