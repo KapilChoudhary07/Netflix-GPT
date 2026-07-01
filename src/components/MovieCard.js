@@ -5,23 +5,27 @@ const MovieCardHoverIcons = ({ posterPath, title }) => {
   if (!posterPath) return null;
 
   return (
-    <div className="group relative aspect-[2/3] w-[128px] flex-shrink-0 cursor-pointer overflow-hidden rounded-md bg-zinc-900 shadow-lg shadow-black/30 transition duration-300 hover:z-20 hover:-translate-y-1 hover:scale-105 hover:shadow-2xl sm:w-[150px] md:w-[178px]">
+    <div className="poster-shine group relative aspect-[2/3] w-[128px] flex-shrink-0 cursor-pointer overflow-hidden rounded-lg bg-zinc-900 shadow-lg shadow-black/30 ring-1 ring-white/5 transition duration-300 hover:z-20 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:shadow-red-950/30 hover:ring-red-500/40 sm:w-[150px] md:w-[178px]">
       <img
         src={IMG_CDN_URL + posterPath}
         alt={title || "Movie poster"}
-        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        className="h-full w-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-      <div className="absolute inset-x-3 bottom-3 translate-y-4 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+      <div className="absolute left-3 top-3 rounded-full bg-black/65 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
+        HD
+      </div>
+
+      <div className="absolute inset-x-3 bottom-3 translate-y-5 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         {title && (
-          <p className="mb-3 line-clamp-2 text-sm font-semibold leading-tight text-white">
+          <p className="mb-3 line-clamp-2 text-sm font-bold leading-tight text-white drop-shadow">
             {title}
           </p>
         )}
         <button
-          className="inline-flex h-9 items-center gap-2 rounded bg-white px-3 text-sm font-bold text-black transition hover:bg-white/80"
+          className="inline-flex h-9 items-center gap-2 rounded-full bg-white px-3 text-sm font-bold text-black shadow-lg transition hover:bg-red-600 hover:text-white"
           aria-label={`Play ${title || "movie"}`}
         >
           <svg

@@ -4,7 +4,95 @@
 
 body {
   @apply overflow-x-hidden;
+  background: #080808;
 }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 700ms ease-out both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 700ms ease-out 120ms both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 700ms ease-out 240ms both;
+}
+
+.cinema-glow::before {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(229, 9, 20, 0.2), transparent 28rem),
+    radial-gradient(circle at 90% 70%, rgba(255, 255, 255, 0.08), transparent 22rem);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.row-shell {
+  animation: fade-up 650ms ease-out both;
+}
+
+.row-shell:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.row-shell:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.row-shell:nth-child(4) {
+  animation-delay: 240ms;
+}
+
+.row-shell:nth-child(5) {
+  animation-delay: 320ms;
+}
+
+.poster-shine::after {
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.2), transparent 58%);
+  content: "";
+  height: 140%;
+  left: -90%;
+  pointer-events: none;
+  position: absolute;
+  top: -20%;
+  transform: rotate(10deg);
+  transition: left 650ms ease;
+  width: 55%;
+}
+
+.poster-shine:hover::after {
+  left: 125%;
+}
+
+.ambient-pulse {
+  animation: soft-pulse 5s ease-in-out infinite;
+}
+
 /* Hide scrollbar for Chrome, Safari and Edge */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

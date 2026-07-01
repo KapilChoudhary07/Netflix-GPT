@@ -42,17 +42,21 @@ const Header = () => {
   };
 
   return (
-    <header className="absolute left-0 top-0 z-50 w-full bg-gradient-to-b from-black via-black/80 to-transparent">
-      <div className="flex min-h-20 items-center justify-between gap-3 px-4 py-3 sm:px-6 md:px-12">
-        <img src={LOGO} alt="Netflix GPT" className="w-28 sm:w-36 md:w-44" />
+    <header className="absolute left-0 top-0 z-50 w-full">
+      <div className="flex min-h-20 items-center justify-between gap-3 bg-gradient-to-b from-black/95 via-black/70 to-transparent px-4 py-3 sm:px-6 md:px-12">
+        <img
+          src={LOGO}
+          alt="Netflix GPT"
+          className="w-28 drop-shadow-[0_8px_24px_rgba(229,9,20,0.35)] sm:w-36 md:w-44"
+        />
 
         {user && (
-          <div className="flex min-w-0 items-center justify-end gap-2 sm:gap-3">
+          <div className="flex min-w-0 items-center justify-end gap-2 rounded-full border border-white/10 bg-black/25 p-1.5 shadow-2xl shadow-black/30 backdrop-blur-md sm:gap-3">
             {showGptSearch && (
               <select
                 onChange={handleLanguageChange}
                 defaultValue={SUPPORTED_LANGUAGES[0]?.identifier}
-                className="hidden h-9 rounded border border-white/20 bg-black/50 px-2 text-sm font-medium text-white outline-none backdrop-blur transition hover:bg-white/10 focus:ring-2 focus:ring-red-600 sm:block"
+                className="hidden h-9 rounded-full border border-white/20 bg-black/60 px-3 text-sm font-medium text-white outline-none transition hover:bg-white/10 focus:ring-2 focus:ring-red-600 sm:block"
                 aria-label="Select language"
               >
                 {SUPPORTED_LANGUAGES.map((lang) => (
@@ -65,7 +69,7 @@ const Header = () => {
 
             <button
               onClick={handleGptSearchClick}
-              className="h-9 rounded bg-red-600 px-3 text-sm font-bold text-white transition hover:bg-red-700 active:scale-95 sm:px-4"
+              className="h-9 rounded-full bg-red-600 px-3 text-sm font-bold text-white shadow-lg shadow-red-950/40 transition hover:-translate-y-0.5 hover:bg-red-500 active:scale-95 sm:px-4"
             >
               {showGptSearch ? "Home" : "GPT Search"}
             </button>
@@ -73,12 +77,12 @@ const Header = () => {
             <img
               src={user?.photoURL}
               alt="User profile"
-              className="h-9 w-9 rounded object-cover ring-1 ring-white/20 sm:h-10 sm:w-10"
+              className="h-9 w-9 rounded-full object-cover ring-2 ring-white/20 transition hover:ring-red-500 sm:h-10 sm:w-10"
             />
 
             <button
               onClick={handleSignOut}
-              className="hidden h-9 rounded border border-white/15 bg-white/10 px-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20 sm:inline-flex sm:items-center"
+              className="hidden h-9 rounded-full border border-white/15 bg-white/10 px-4 text-sm font-semibold text-white transition hover:bg-white/20 sm:inline-flex sm:items-center"
             >
               Sign out
             </button>
