@@ -8,8 +8,7 @@ export const API_Options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer " + process.env.REACT_APP_TMBD_KEY
+    Authorization: "Bearer " + (process.env.REACT_APP_TMBD_KEY || ""),
   },
 };
 
@@ -22,7 +21,8 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "en", name: "English" },
   { identifier: "hindi", name: "हिन्दी" },
   { identifier: "spanish", name: "Spanish" },
-    { identifier: "french", name: "French" },
+  { identifier: "french", name: "French" },
 ];
 
- export const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY
+// Keep export for any legacy imports; genai.js now reads env var directly
+export const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY || "";
