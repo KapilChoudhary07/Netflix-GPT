@@ -1,7 +1,7 @@
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="cinema-glow absolute inset-0 z-20 flex items-end bg-gradient-to-r from-black via-black/65 to-black/10 text-white">
-      <div className="w-full bg-gradient-to-t from-[#080808] via-black/20 to-transparent px-5 pb-24 pt-28 sm:px-8 md:px-20 md:pb-28">
+    <div className="cinema-glow absolute inset-0 z-20 flex items-end bg-gradient-to-r from-black/35 via-transparent to-transparent text-white">
+      <div className="w-full px-5 pb-20 pt-28 sm:px-8 sm:pb-24 md:px-20 md:pb-24">
         <div className="relative max-w-2xl">
           <div className="animate-fade-up mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-red-100 shadow-lg shadow-red-950/30 backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-red-500 ambient-pulse" />
