@@ -1,9 +1,8 @@
 import { useRef, useState } from "react";
 import Headers from "./Header";
 import { CheckValidDate } from "../utils/validate";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
 // import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {addUser} from "../utils/userSlice";
@@ -59,15 +58,7 @@ const Login = () => {
           setErrorMessage(errorCode + "-" + errorMessage);
         });
     } else {
-      signInWithEmailAndPassword(
-        auth,
-        email.current.value,
-        password.current.value
-      )
-        .then((userCredential) => {
-          const user = userCredential.user;
- 
-        })
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
@@ -86,6 +77,7 @@ const Login = () => {
       <div className="absolute inset-0 -z-10">
   <img 
     src={BG_URL}
+    alt="Netflix background"
     className="w-full h-full object-cover brightness-50"
   />
 </div>

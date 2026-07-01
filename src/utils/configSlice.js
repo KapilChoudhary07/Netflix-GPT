@@ -1,7 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import lang from "./languageConstants";
-import reducer from "./userSlice";
-
 
 const configSlice = createSlice({
 
