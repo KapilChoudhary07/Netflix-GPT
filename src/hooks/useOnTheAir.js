@@ -8,7 +8,7 @@ import { API_Options } from "../utils/constants";
 const useOnTheAirMovies = () => {
 
       const dispatch = useDispatch();
-      const onTheAirMovies = useSelector((store) => store.movies.ontheairMovies);
+      const onTheAirMovies = useSelector((store) => store.movies.onTheAirMovies);
 
   useEffect(() => {
     if (onTheAirMovies) return;

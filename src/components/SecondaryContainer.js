@@ -30,9 +30,9 @@ const SecondaryContainer = () => {
       <div className="space-y-8 px-4 sm:px-6 md:px-12">
         <MovieList title="Now Playing 🎬" movies={movies.nowPlayingMovies} />
         <MovieList title="Popular 🔥"     movies={movies.popularMovies} />
-        <MovieList title="Top Rated ⭐"   movies={movies.topratedMovies} />
-        <MovieList title="Trending 📈"    movies={movies.ontheairMovies} />
-        <MovieList title="TV Shows 📺"    movies={movies.tvshow} />
+        <MovieList title="Top Rated ⭐"   movies={movies.topRatedMovies} />
+        <MovieList title="Trending 📈"    movies={movies.onTheAirMovies} />
+        <MovieList title="TV Shows 📺"    movies={movies.tvShowMovies} />
       </div>
 
       {/* Bottom gradient fade */}

@@ -8,7 +8,7 @@ import { API_Options } from "../utils/constants";
 const useTopRatedMovies = () => {
 
       const dispatch = useDispatch();
-      const topRatedMovies = useSelector((store) => store.movies.topratedMovies);
+      const topRatedMovies = useSelector((store) => store.movies.topRatedMovies);
 
   useEffect(() => {
     if (topRatedMovies) return;

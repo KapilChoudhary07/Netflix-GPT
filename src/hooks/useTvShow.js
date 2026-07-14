@@ -8,10 +8,10 @@ import { API_Options } from "../utils/constants";
 const useTvShow = () => {
 
       const dispatch = useDispatch();
-       const tvshowMovies = useSelector((store) => store.movies.tvshow);
+       const tvShowMovies = useSelector((store) => store.movies.tvShowMovies);
 
   useEffect(() => {
-    if (tvshowMovies) return;
+    if (tvShowMovies) return;
 
     const getTvShow = async () => {
       const data = await fetch(
@@ -24,7 +24,7 @@ const useTvShow = () => {
     };
 
     getTvShow();
-  }, [dispatch, tvshowMovies]);
+  }, [dispatch, tvShowMovies]);
 }
 
 
