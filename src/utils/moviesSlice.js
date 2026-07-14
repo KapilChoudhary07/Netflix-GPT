@@ -1,46 +1,37 @@
 import {createSlice} from "@reduxjs/toolkit"
 
-
 const moviesSlice = createSlice ({
-
-
     name: "movies",
     initialState: {
         nowPlayingMovies: null,
-        on_the_air : null,
-        popularMovies:null,
-        trailerVideo : null,
-        top_ratedMovies: null,
-        tvshowMovies : null,
+        popularMovies: null,
+        topRatedMovies: null,
+        onTheAirMovies: null,
+        tvShowMovies: null,
+        trailerVideo: null,
     },
     reducers: {
-        addNowPlayingMovies : (state,action) => {
+        addNowPlayingMovies: (state, action) => {
             state.nowPlayingMovies = action.payload;
-
         },
-          addpopularMovies : (state,action) => {
+        addpopularMovies: (state, action) => {
             state.popularMovies = action.payload;
-
         },
-          addtopratedMovies : (state,action) => {
-            state.topratedMovies = action.payload;
-
+        addtopratedMovies: (state, action) => {
+            state.topRatedMovies = action.payload;
         },
-       addontheairMovies : (state,action) => {
-            state.ontheairMovies = action.payload;
-
+        addontheairMovies: (state, action) => {
+            state.onTheAirMovies = action.payload;
         },
-           addtvshow : (state,action) => {
-            state.tvshow = action.payload;
-
+        addtvshow: (state, action) => {
+            state.tvShowMovies = action.payload;
         },
-         
-        addTrailerVideo : (state,action) => {
+        addTrailerVideo: (state, action) => {
             state.trailerVideo = action.payload;
         },
     },
 });
 
-export const {addNowPlayingMovies , addTrailerVideo, addpopularMovies , addtopratedMovies, addontheairMovies ,addtvshow } = moviesSlice.actions;
+export const { addNowPlayingMovies, addTrailerVideo, addpopularMovies, addtopratedMovies, addontheairMovies, addtvshow } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

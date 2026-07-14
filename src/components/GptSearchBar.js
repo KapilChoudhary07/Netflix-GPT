@@ -66,7 +66,7 @@ const GptSearchBar = () => {
     <div className="flex flex-col items-center pt-6 animate-fade-up">
       {/* Label */}
       <div className="mb-4 flex items-center gap-2">
-        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-red-600 shadow-lg shadow-red-950/50 animate-float">
+        <div className="flex h-7 w-7 items-center justify-center rounded-full bg-purple-600 shadow-lg shadow-purple-950/50 animate-float">
           <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
           </svg>
@@ -80,7 +80,7 @@ const GptSearchBar = () => {
       <form
         className={`search-glow w-full max-w-2xl flex items-center rounded-full border transition-all duration-300 ${
           focused
-            ? "border-red-500/50 bg-black/70 backdrop-blur-xl"
+            ? "border-purple-500/50 bg-black/70 backdrop-blur-xl"
             : "border-white/20 bg-white/10 backdrop-blur-lg"
         }`}
         onSubmit={(e) => e.preventDefault()}
@@ -106,7 +106,7 @@ const GptSearchBar = () => {
           type="button"
           disabled={loading}
           onClick={handleGptSearchClick}
-          className="m-1.5 flex h-10 min-w-[90px] items-center justify-center gap-2 rounded-full bg-red-600 px-5 text-sm font-bold text-white shadow-lg shadow-red-950/40 transition-all duration-300 hover:bg-red-500 hover:shadow-red-900/50 active:scale-95 disabled:opacity-60"
+          className="m-1.5 flex h-10 min-w-[90px] items-center justify-center gap-2 rounded-full bg-purple-600 px-5 text-sm font-bold text-white shadow-lg shadow-purple-950/40 transition-all duration-300 hover:bg-purple-500 hover:shadow-purple-900/50 active:scale-95 disabled:opacity-60"
         >
           {loading ? (
             <svg className="h-4 w-4 animate-spin-slow" fill="none" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ const GptSearchBar = () => {
             onClick={() => {
               if (searchText.current) searchText.current.value = hint;
             }}
-            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/50 transition-all duration-200 hover:border-red-500/40 hover:bg-red-950/30 hover:text-white/80"
+            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/50 transition-all duration-200 hover:border-purple-500/40 hover:bg-purple-950/30 hover:text-white/80"
           >
             {hint}
           </button>
