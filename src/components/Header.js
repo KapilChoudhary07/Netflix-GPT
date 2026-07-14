@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { changeLanguage } from "../utils/configSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { auth } from "../utils/firebase";
-import { toogleGptSearchView } from "../utils/gptSlice";
+import { toggleGptSearchView } from "../utils/gptSlice";
 import { addUser, removeUser } from "../utils/userSlice";
 
 const Header = () => {
@@ -40,7 +40,7 @@ const Header = () => {
   };
 
   const handleGptSearchClick = () => {
-    dispatch(toogleGptSearchView());
+    dispatch(toggleGptSearchView());
   };
 
   const handleLanguageChange = (e) => {
